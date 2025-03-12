@@ -9,7 +9,7 @@ import (
 
 // shows difference between parallelism and concurrency
 func TestGoMaxProc(t *testing.T) {
-	runtime.GOMAXPROCS(1)
+	// runtime.GOMAXPROCS(1)
 	fmt.Println(runtime.NumCPU(), runtime.GOMAXPROCS(0))
 
 	for i := 0; i < 10; i++ {
