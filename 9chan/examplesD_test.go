@@ -25,7 +25,7 @@ func TestBufferedSimple(t *testing.T) {
 }
 
 func TestBuffered(t *testing.T) {
-	tasksChan := make(chan string) // !
+	tasksChan := make(chan string, 6) // !
 
 	worker := func(workerId int) {
 		fmt.Printf("worker %d: started\n", workerId)

@@ -24,9 +24,9 @@ func TestChannelsTransfer(t *testing.T) {
 
 	testToA <- "process this"
 
-	precessed := <-bToTest
+	processed := <-bToTest
 
-	fmt.Println(precessed)
+	fmt.Println(processed)
 
 	// testToA <- "process also that"
 
