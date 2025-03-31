@@ -20,7 +20,7 @@ func main() {
 		return completed
 	}
 
-	doWork(nil)
+	doWork(nil) // навсегда остаемся здесь из-за range nil
 
 	time.Sleep(time.Second * 5)
 	fmt.Println("Done.")

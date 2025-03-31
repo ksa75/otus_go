@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func main() {
@@ -13,8 +14,8 @@ func main() {
 		go func() {
 
 			defer wg.Done() // <===
-
-			fmt.Println("go-go-go")
+			time.Sleep(time.Second * 5)
+			fmt.Println(i)
 
 		}()
 	}

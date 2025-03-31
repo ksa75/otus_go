@@ -16,14 +16,15 @@ func TestGoMaxProc(t *testing.T) {
 		go func(num int) {
 			// never use "i" here
 			fmt.Println("start", num)
-			// runtime.Gosched()
+			runtime.Gosched()
 			for i := 0; i < 1000000; i++ {
 			} // why sleep does not help to block here (runtime.Gosched())?
-			//time.Sleep(1 * time.Millisecond)
+			// time.Sleep(1 * time.Millisecond)
 			fmt.Println("stop", num)
 		}(i) // pass a parameter
 	}
 
 	// try runtime.GOMAXPROCS(2), 3,4...
 	time.Sleep(1 * time.Second) // why need this?
+
 }

@@ -33,7 +33,7 @@ func main() {
 		time.Sleep(1 * time.Second)
 		fmt.Println("Canceling doWork goroutine...")
 
-		//		close(done)
+		close(done)
 	}()
 
 	time.Sleep(10 * time.Second)

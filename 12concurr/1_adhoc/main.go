@@ -15,7 +15,7 @@ func main() {
 	handleData := make(chan int)
 	go loopData(handleData)
 
-	close(handleData)
+	// close(handleData)
 
 	for num := range handleData {
 		fmt.Println(num)

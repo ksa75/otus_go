@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func main() {
@@ -14,6 +15,7 @@ func main() {
 	for i := 0; i < goCount; i++ {
 		go func() {
 			fmt.Println("go-go-go")
+			time.Sleep(time.Second * 5)
 			wg.Done() // <===
 		}()
 	}

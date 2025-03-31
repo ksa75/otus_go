@@ -44,7 +44,7 @@ func TestNil(t *testing.T) {
 		fmt.Println("sent to a nil channel")
 	}()
 
-	time.Sleep(1 * time.Second)
+	time.Sleep(10 * time.Second)
 
 	close(c) // panic
 }

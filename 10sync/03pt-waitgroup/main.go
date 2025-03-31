@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func main() {
@@ -11,7 +12,8 @@ func main() {
 	wg.Add(goCount)
 	for i := 0; i < goCount; i++ {
 		go func(wg1 *sync.WaitGroup) {
-			fmt.Println("go-go-go")
+			fmt.Println(i)
+			time.Sleep(time.Second * 5)
 			wg1.Done() // <===
 		}(&wg)
 	}
