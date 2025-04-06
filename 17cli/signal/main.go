@@ -15,6 +15,7 @@ func main() {
 	fmt.Println(os.Getpid())
 	for s := range c {
 		fmt.Println("Got signal:", s)
+		return
 	}
 }
 

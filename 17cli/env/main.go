@@ -3,22 +3,23 @@ package main
 import (
 	"fmt"
 	"os"
+	"slices"
 )
 
 func main() {
 
-	env := os.Environ() // слайс строк "key=value"
-	fmt.Println(env)    // USER=rob
+	env := os.Environ()                           // слайс строк "key=value"
+	fmt.Println(slices.Contains(env, "USER=rob")) // USER=rob
 
 	user, exists := os.LookupEnv("USER")
 	if exists {
 		fmt.Println(user) // rob
 	}
 
+	os.Setenv("CITY", "Ottawa") // установить
 	city, cityExists := os.LookupEnv("CITY")
 	fmt.Println(city, cityExists)
 
-	//os.Setenv("CITY", "Ottawa") // установить
 	//os.Unsetenv("CITY")                                 // удалить
 	fmt.Println(os.ExpandEnv("$USER lives in ${CITY}")) // "шаблонизация"
 }
