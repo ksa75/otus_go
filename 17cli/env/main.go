@@ -17,6 +17,7 @@ func main() {
 	}
 
 	os.Setenv("CITY", "Ottawa") // установить
+	// syscall.Unsetenv("CITY")
 	city, cityExists := os.LookupEnv("CITY")
 	fmt.Println(city, cityExists)
 
