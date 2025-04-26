@@ -1,0 +1,5 @@
+wrk -c100 -d2000s -t50 http://127.0.0.1:8080/
+
+curl -o trace.out "http://127.0.0.1:8080/debug/pprof/trace?seconds=2"
+
+go tool trace trace.out

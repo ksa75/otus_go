@@ -1,0 +1,11 @@
+go test -bench=. .
+go test -bench=. -benchmem .
+go test -bench=. -benchmem -cpuprofile=cpu.out -memprofile=mem.out .
+
+
+// benchstat
+
+go test --count 2 -bench=. -benchmem . | tee old.txt
+go test --count 2 -bench=. -benchmem . | tee new.txt
+
+benchstat old.txt new.txt
