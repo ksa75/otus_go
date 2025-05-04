@@ -1,10 +1,10 @@
 package main
 
 import (
-"fmt"
-"runtime"
-"strconv"
-"time"
+	"fmt"
+	"runtime"
+	"strconv"
+	"time"
 )
 
 const (
@@ -20,7 +20,7 @@ func timeGC() {
 }
 
 func main() {
-	for i := 0; i < numElements; i++ {
+	for i := range numElements {
 		foo[strconv.Itoa(i)] = i
 	}
 

@@ -2,7 +2,7 @@ package exbench
 
 func Fast() int {
 	acc := new(int)
-	for i := 0; i < 10; i++ {
+	for range 10 {
 		acc2 := new(int)
 		*acc2 = *acc + 1
 		acc = acc2
@@ -13,7 +13,7 @@ func Fast() int {
 
 func Slow() int {
 	acc := new(int)
-	for i := 0; i < 1000; i++ {
+	for range 1000 {
 		acc2 := new(int)
 		*acc2 = *acc + 1
 		acc = acc2
