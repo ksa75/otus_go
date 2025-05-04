@@ -1,6 +1,7 @@
 package bench
 
 import (
+	"fmt"
 	"sync"
 	"testing"
 )
@@ -20,4 +21,5 @@ func BenchmarkConcurency(b *testing.B) {
 			Sum()
 		}
 	})
+	fmt.Println(v)
 }

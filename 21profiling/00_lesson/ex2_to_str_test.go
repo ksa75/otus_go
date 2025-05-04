@@ -1,13 +1,13 @@
 package bench_test
 
 import (
-	"fmt"
+	"strconv"
 	"testing"
 )
 
 func toString(v int) string {
-	return fmt.Sprintf("%d", v)
-	// return strconv.Itoa(v)
+	// return fmt.Sprintf("%d", v)
+	return strconv.Itoa(v)
 }
 
 func BenchmarkToString(b *testing.B) {

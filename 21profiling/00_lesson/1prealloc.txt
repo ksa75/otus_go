@@ -1,0 +1,7 @@
+goos: windows
+goarch: amd64
+pkg: otus.ru/benchtest
+cpu: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+BenchmarkFillSlice-8   	   22671	     48828 ns/op
+PASS
+ok  	otus.ru/benchtest	1.865s

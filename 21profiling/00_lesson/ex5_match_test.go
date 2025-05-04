@@ -10,10 +10,10 @@ var (
 )
 
 func match(str, match string) bool {
-	res, _ := regexp.MatchString(match, str)
-	return res
+	// res, _ := regexp.MatchString(match, str)
+	// return res
 
-	// return re.MatchString(str)
+	return re.MatchString(str)
 
 	// return strings.Contains(str, match)
 }
