@@ -8,6 +8,10 @@ import (
 
 func main() {
 	ctx, _ := context.WithTimeout(context.Background(), time.Millisecond)
+	context.AfterFunc(ctx, func() {
+		fmt.Println("context done afterFunc")
+	})
+
 	task(ctx)
 }
 
@@ -30,7 +34,7 @@ func task(ctx context.Context) {
 		default:
 			i++
 			fmt.Println(i)
-			//time.Sleep(time.Second)
+			time.Sleep(time.Second)
 		}
 
 	}

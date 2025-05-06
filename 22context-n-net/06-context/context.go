@@ -59,7 +59,7 @@ func task(ctx context.Context) {
 		}
 
 		i++
-		fmt.Println(i, ctx.Value(RequestID("request_id")), ctx.Value("invalid_id"))
+		fmt.Println(i, ctx.Value(RequestID("request_id")), ctx.Value("invalid_id"), ctx.Value("user_id"))
 		time.Sleep(time.Second)
 	}
 }
