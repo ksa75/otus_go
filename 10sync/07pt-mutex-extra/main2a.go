@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
@@ -20,20 +21,20 @@ func main() {
 	//Очевидно, что сумма всех элементов обоих слайсов равна три миллиона
 	//Но на всякий случай пересчитаем
 	var sum int
-	//mu := sync.Mutex{}
+	mu := sync.Mutex{}
 	go func() {
 		for _, v := range sl1 {
-			//mu.Lock()
+			mu.Lock()
 			sum += v
-			//mu.Unlock()
+			mu.Unlock()
 		}
 	}()
 
 	go func() {
 		for _, v := range sl2 {
-			//mu.Lock()
+			mu.Lock()
 			sum += v
-			//mu.Unlock()
+			mu.Unlock()
 		}
 	}()
 	time.Sleep(time.Second)

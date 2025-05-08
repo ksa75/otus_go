@@ -22,8 +22,7 @@ func Slow() string {
 func Fast() string {
 	builder := pool.Get().(*strings.Builder)
 	defer pool.Put(builder)
-	builder.Reset()
+	// builder.Reset()
 	builder.WriteString("Hello")
-	res := builder.String()
-	return res
+	return builder.String()
 }

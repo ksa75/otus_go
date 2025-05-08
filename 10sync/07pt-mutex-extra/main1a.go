@@ -14,7 +14,8 @@ func main() {
 	time.Sleep(time.Second)
 }
 func stih1(mu *sync.Mutex) {
-
+	mu.Lock()
+	defer mu.Unlock()
 	fmt.Println("Три мудреца в одном тазу")
 	time.Sleep(time.Millisecond * 100)
 	fmt.Println("Пустились по морю в грозу")
@@ -28,7 +29,8 @@ func stih1(mu *sync.Mutex) {
 }
 
 func stih2(mu *sync.Mutex) {
-
+	mu.Lock()
+	defer mu.Unlock()
 	fmt.Println("Шалтай-болтай сидел на стене")
 	time.Sleep(time.Millisecond * 100)
 	fmt.Println("Шалтай-болтай свалился во сне")
